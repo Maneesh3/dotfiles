@@ -1,4 +1,6 @@
 return {
+  -- commenting code
+  -- select code - `gcc`
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
@@ -31,6 +33,15 @@ return {
   -- Add the Rainbow plugin
   {
     "p00f/nvim-ts-rainbow",
+  },
+  -- Save session Persistence Plugin
+  -- <leader>qs ql qS
+  {
+    "folke/persistence.nvim",
+    event = "BufReadPre", -- this will only start session saving when an actual file was opened
+    opts = {
+      -- add any custom options here
+    },
   },
   -- Add Mason for managing external editor tooling
   {
