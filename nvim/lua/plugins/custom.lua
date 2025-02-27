@@ -54,9 +54,11 @@ return {
           "python-lsp-server",
           "eslint-lsp",
           "jq",
-          "json-lap",
+          "json-lsp",
           "java-language-server",
           "gopls",
+          "terraform-ls", -- LSP for Terraform
+          "tflint", -- Terraform linter
         },
       })
     end,
@@ -67,7 +69,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "pyright", "tsserver", "gopls" },
+        ensure_installed = { "pyright", "tsserver", "gopls", "terraformls" },
       })
     end,
   },
@@ -86,6 +88,17 @@ return {
 
       -- Configure gopls for Go
       lspconfig.gopls.setup({})
+      -- Configure Terraform
+      lspconfig.terraformls.setup({
+        cmd = { "terraform-ls", "serve" },
+        filetypes = { "terraform", "tf", "hcl" },
+      })
     end,
+  },
+  -- TokyoNight theme
+  {
+    "folke/tokyonight.nvim",
+    lazy = true,
+    opts = { style = "night" },
   },
 }
