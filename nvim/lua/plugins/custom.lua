@@ -101,4 +101,14 @@ return {
     lazy = true,
     opts = { style = "night" },
   },
+  -- Window Picker - open file in a Window
+  {
+    "s1n7ax/nvim-window-picker",
+    name = "window-picker",
+    event = "VeryLazy",
+    version = "2.*",
+    config = function()
+      require("window-picker").setup()
+    end,
+  },
 }
