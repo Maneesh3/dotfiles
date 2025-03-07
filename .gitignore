@@ -1,4 +1,7 @@
 *
 !.gitignore
 !README.md
-!nvim
+!nvim/
+!nvim/*
+!tmux/
+!tmux/*
